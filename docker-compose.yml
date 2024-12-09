@@ -185,9 +185,10 @@ services:
       # see https://github.com/qdm12/gluetun-wiki for more details
       # example envs based on https://github.com/qdm12/gluetun-wiki/blob/main/setup/providers/mullvad.md
       - VPN_SERVICE_PROVIDER=surfshark
-      - OPENVPN_USER=Uh3qEXVF62aF5dhGaWX7R2dY
-      - OPENVPN_PASSWORD=uVzVrY255PqE8syVeAVmAMNB
-      - SERVER_COUNTRIES=America
+      - VPN_TYPE=wireguard
+      - WIREGUARD_PRIVATE_KEY=UL+TOM/68eUH11USM15fYWJxZcMlxWM1ZTH+Sza6k1I=
+      - WIREGUARD_ADDRESSES=10.14.0.2/16
+      - SERVER_CITIES=Los_Angeles
     volumes:
       - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/configs/gluetun:/gluetun
     restart: unless-stopped
