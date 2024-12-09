@@ -51,6 +51,9 @@ services:
     #  # Optional part for traefik middlewares
     #  - traefik.http.routers.sonarr.middlewares=local-ipwhitelist@file
 
+
+  #
+  #
   # image used to scan for movies
   radarr:
     image: linuxserver/radarr:latest
