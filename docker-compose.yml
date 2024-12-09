@@ -211,7 +211,8 @@ services:
     volumes:
       - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/configs/qbittorrent:/config # location of database and configs
       - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/media/downloads:/media/downloads # location of qbittorrent downloads
-    depends_on: gluetun
+    depends_on: 
+      - gluetun
     network_mode: container:arr-suite-gluetun # use the gluetun container network (vpn killswitch)
     restart: unless-stopped
 
