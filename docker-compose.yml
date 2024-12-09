@@ -218,7 +218,7 @@ services:
 
   
   # image used to manage media and stream it
-  #jellyfin:
+  jellyfin:
     image: linuxserver/jellyfin:latest
     container_name: arr-suite-jellyfin
     environment:
