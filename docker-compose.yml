@@ -35,7 +35,7 @@ services:
       - TZ=Europe/Berlin
     volumes:
       - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/configs/sonarr:/config # location of database and configs
-      - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/media:/media # location of media library + qbittorrent download folder
+      - ${DOCKER_VOLUME_STORAGE:-/mnt/extern}/arr-suite/media:/media # location of media library + qbittorrent download folder
     expose:
       - 8989/tcp # web ui
     ports:
@@ -64,7 +64,7 @@ services:
       - TZ=Europe/Berlin
     volumes:
       - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/configs/radarr:/config # location of database and configs
-      - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/media:/media # location of media library + qbittorrent download folder
+      - ${DOCKER_VOLUME_STORAGE:-/mnt/extern}/arr-suite/media:/media # location of media library + qbittorrent download folder
     expose:
       - 7878/tcp # web ui
     ports:
@@ -90,7 +90,7 @@ services:
       - TZ=Europe/Berlin
     volumes:
       - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/configs/lidarr:/config # location of database and configs
-      - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/media:/media # location of media library + qbittorrent download folder
+      - ${DOCKER_VOLUME_STORAGE:-/mnt/extern}/arr-suite/media:/media # location of media library + qbittorrent download folder
     expose:
       - 8686/tcp # web ui
     ports:
@@ -116,7 +116,7 @@ services:
       - TZ=Europe/Berlin
     volumes:
       - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/configs/readarr:/config # location of database and configs
-      - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/media:/media # location of media library + qbittorrent download folder
+      - ${DOCKER_VOLUME_STORAGE:-/mnt/extern}/arr-suite/media:/media # location of media library + qbittorrent download folder
     expose:
       - 8787/tcp # web ui
     ports:
@@ -142,7 +142,7 @@ services:
       - TZ=Europe/Berlin
     volumes:
       - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/configs/bazarr:/config # location of database and configs
-      - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/media:/media # location of media library (optional)
+      - ${DOCKER_VOLUME_STORAGE:-/mnt/extern}/arr-suite/media:/media # location of media library (optional)
     expose:
       - 6767/tcp # web ui
     ports:
@@ -213,7 +213,7 @@ services:
       - WEBUI_PORT=8080
     volumes:
       - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/configs/qbittorrent:/config # location of database and configs
-      - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/media/downloads:/media/downloads # location of qbittorrent downloads
+      - ${DOCKER_VOLUME_STORAGE:-/mnt/extern}/arr-suite/media/downloads:/media/downloads # location of qbittorrent downloads
     depends_on:
       - gluetun
     network_mode: container:arr-suite-gluetun # use the gluetun container network (vpn killswitch)
@@ -230,7 +230,7 @@ services:
       - TZ=Europe/Berlin
     volumes:
       - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/configs/jellyfin:/config # location of database and configs; can grow very large
-      - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/media:/data # location of media library
+      - ${DOCKER_VOLUME_STORAGE:-/mnt/extern}/arr-suite/media:/data # location of media library
       #- ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/configs/jellyfin/lib:/opt/vc/lib # location for Raspberry Pi OpenMAX libs (optional)
     expose:
       - 8096/tcp # http web ui
