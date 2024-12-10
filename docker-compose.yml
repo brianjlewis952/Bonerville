@@ -179,6 +179,8 @@ services:
     container_name: arr-suite-gluetun
     cap_add:
       - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
     ports:
       - 8080:8080 # qbittorrent http web ui
     environment:
