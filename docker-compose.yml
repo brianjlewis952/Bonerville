@@ -181,8 +181,6 @@ services:
       - NET_ADMIN
     ports:
       - 8080:8080 # qbittorrent http web ui
-    devices:
-      - /dev/net/tun
     environment:
       # see https://github.com/qdm12/gluetun-wiki for more details
       # example envs based on https://github.com/qdm12/gluetun-wiki/blob/main/setup/providers/mullvad.md
