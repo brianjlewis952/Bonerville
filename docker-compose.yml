@@ -181,8 +181,6 @@ services:
       - NET_ADMIN
     ports:
       - 8080:8080 # qbittorrent http web ui
-    cap_add:
-      - NET_ADMIN
     devices:
       - /dev/net/tun
     environment:
