@@ -188,7 +188,7 @@ services:
       - VPN_TYPE=wireguard
       - WIREGUARD_PRIVATE_KEY=UL+TOM/68eUH11USM15fYWJxZcMlxWM1ZTH+Sza6k1I=
       - WIREGUARD_ADDRESSES=10.14.0.2/16
-      - SERVER_CITIES=Los_Angeles
+      - SERVER_HOSTNAMES=us-lax.prod.surfshark.com
     volumes:
       - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/arr-suite/configs/gluetun:/gluetun
     restart: unless-stopped
